@@ -134,7 +134,7 @@ window.onload = () => {
 
     
     getWeather("Одеса");
-
+    getLocationWeather();
     
     const savedUser =
         localStorage.getItem("skyviewUser");
