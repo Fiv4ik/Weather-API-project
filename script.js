@@ -33,6 +33,8 @@ async function getWeather(city) {
     }
 }
 
+
+
 function updateUI(data) {
 
     const city = data.name;
@@ -65,7 +67,19 @@ function updateUI(data) {
     }
 }
 
+function getLocationWeather() {
+    navigator.geolocation.getCurrentPosition(async (pos) => {
+        const lat = pos.coords.latitude;
+        const lon = pos.coords.longitude;
 
+        const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=ua`;
+
+        const res = await fetch(url);
+        const data = await res.json();
+
+        updateUI(data);
+    });
+}
 
 function registerUser() {
 
