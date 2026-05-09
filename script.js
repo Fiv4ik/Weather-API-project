@@ -125,6 +125,7 @@ function registerUser() {
 
     alert(`Вітаємо, ${firstName}! Реєстрація успішна ✅`);
 
+    document.querySelector(".w-full.lg\\:w-96").style.display = "none";
     console.log(user);
 }
 
