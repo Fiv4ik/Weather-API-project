@@ -44,7 +44,7 @@ function updateUI(data) {
     const wind = Math.round(data.wind.speed * 3.6);
 
     document.getElementById("city").textContent =
-        `${city}, Україна`;
+        `${city}`;
 
     document.getElementById("temp").textContent =
         `${temp}°`;
