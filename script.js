@@ -140,6 +140,13 @@ function registerUser() {
 }
 
 
+function handleEnter(event) {
+
+    if (event.key === "Enter") {
+
+        searchWeather();
+    }
+}
 
 window.onload = () => {
 
