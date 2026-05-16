@@ -122,6 +122,16 @@ function registerUser() {
         "skyviewUser",
         JSON.stringify(user)
     );
+       // Ховаємо реєстрацію
+    document.querySelector(".w-full.lg\\:w-96")
+        .style.display = "none";
+
+    // Показуємо погоду
+    document.getElementById("weatherScreen")
+        .classList.remove("hidden");
+
+     getLocationWeather();
+
 
     alert(`Вітаємо, ${firstName}! Реєстрація успішна ✅`);
 
@@ -130,14 +140,24 @@ function registerUser() {
 }
 
 
+function handleEnter(event) {
+
+    if (event.key === "Enter") {
+
+        searchWeather();
+    }
+}
 
 window.onload = () => {
 
-    
-    getWeather("Одеса");
-    getLocationWeather();
-    
-    const savedUser =
+     // Ховаємо погоду при старті
+    document.getElementById("weatherScreen")
+        .classList.add("hidden");
+
+    // Показуємо форму реєстрації
+    document.querySelector(".w-full.lg\\:w-96")
+        .style.display = "flex";
+          const savedUser =
         localStorage.getItem("skyviewUser");
 
     if (savedUser) {
